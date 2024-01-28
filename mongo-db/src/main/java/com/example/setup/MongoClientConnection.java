@@ -13,12 +13,11 @@ import java.util.Properties;
 /**
  * @author rahul
  */
-
 public class MongoClientConnection {
 
     private static final String APPLICATION_PROPERTIES = "application.properties";
 
-    private static final String URI = "spring.data.mongodb.url";
+    private static final String URI = "spring.data.mongodb.uri";
 
     private static final String ADMIN = "admin";
 
