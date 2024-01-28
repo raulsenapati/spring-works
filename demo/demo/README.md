@@ -8,6 +8,12 @@
 
 ````
 spring.datasource.url=jdbc:postgresql://localhost:5432/spring
-spring.datasource.username=postgres 
+spring.datasource.username=postgres
 spring.datasource.password=postgres
 ````
+
+* Project requirements
+    * Maven
+    * Java 21
+    * Intellij
+    * Postgres db (local/cloud)

@@ -9,9 +9,11 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class CreateStudentRequest {
+public class UpdateStudentRequest {
 
-    @NotNull(message = "First name is required")
+    @NotNull(message = "Student Id required")
+    private Long id;
+
     private String firstName;
 
     private String lastName;
