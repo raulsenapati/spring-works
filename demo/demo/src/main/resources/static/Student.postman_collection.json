@@ -1,0 +1,376 @@
+{
+	"info": {
+		"_postman_id": "da35d543-536f-461e-8b73-419b782f2003",
+		"name": "Student",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23758495"
+	},
+	"item": [
+		{
+			"name": "GetStudent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smit\",\r\n    \"email\": \"john@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateStudent Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstNames\": [\"John\", \"Raj\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/getByFirstNameIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"getByFirstNameIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateStudent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Sachin\",\r\n    \"lastName\": \"David\",\r\n    \"email\": \"sachin@gmail.com\",\r\n    \"id\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllStudent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllWithPagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/getAllWithPagination?pageNo=4&pageSize=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"getAllWithPagination"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "4"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllWithSorting",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "direction",
+						"value": "DESC",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/getAllWithSorting?property=firstName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"getAllWithSorting"
+					],
+					"query": [
+						{
+							"key": "property",
+							"value": "firstName"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByFirstName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/getByFirstName/John",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"getByFirstName",
+						"John"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "like",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/like/John",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"like",
+						"John"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "startsWith",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/startsWith/John",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"startsWith",
+						"John"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "startsWith Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/endsWith/son",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"endsWith",
+						"son"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByFirstNameAndLastName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/getByFirstNameAndLastName/John/Smith",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"getByFirstNameAndLastName",
+						"John",
+						"Smith"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByFirstNameOrLastName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/getByFirstNameOrLastName/John/Smith",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"getByFirstNameOrLastName",
+						"John",
+						"Smith"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteStudent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/delete/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
