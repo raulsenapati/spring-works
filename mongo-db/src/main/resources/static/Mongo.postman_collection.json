@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "5f463e35-6284-484b-837b-b406692a5ac2",
+		"name": "Mongo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23758495"
+	},
+	"item": [
+		{
+			"name": "ReadAllStudents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "studentsByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/studentsByName/Yuvraj",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"studentsByName",
+						"Yuvraj"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allWithPagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/allWithPagination?pageNo=2&pageSize=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"allWithPagination"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "2"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allWithSorting",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/allWithSorting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"allWithSorting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "studentsByNameAndEmail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/studentsByNameAndMail?name=John&email=john@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"studentsByNameAndMail"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "John"
+						},
+						{
+							"key": "email",
+							"value": "john@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "studentsByNameOrMail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/studentsByNameOrMail?name=John-1&email=steve@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"studentsByNameOrMail"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "John-1"
+						},
+						{
+							"key": "email",
+							"value": "steve@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteStudent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/delete/65bf11ad7924e5761987db37",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"delete",
+						"65bf11ad7924e5761987db37"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Yuvraj\",\r\n    \"email\": \"yuvraj@mail.com\",\r\n    \"department\": {\r\n        \"departmentName\": \"Computer Science\",\r\n        \"location\": \"US\"\r\n    },\r\n    \"subjects\": [\r\n        {\r\n            \"subjectName\": \"Java\",\r\n            \"marksObtained\": 92\r\n        },\r\n        {\r\n            \"subjectName\": \"Reinforcement Learning\",\r\n            \"marksObtained\": 85\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateStudent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"65bf1232809c5b136c8ebaf6\",\r\n    \"name\": \"Yuvraj\",\r\n    \"email\": \"yuvraj@mail.com\",\r\n    \"department\": {\r\n        \"departmentName\": \"Computer Science\",\r\n        \"location\": \"US\"\r\n    },\r\n    \"subjects\": [\r\n        {\r\n            \"subjectName\": \"Java\",\r\n            \"marksObtained\": 92\r\n        },\r\n        {\r\n            \"subjectName\": \"Reinforcement Learning\",\r\n            \"marksObtained\": 88\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "byDepartmentName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/byDepartmentName?deptName=Computer and Information Science",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"byDepartmentName"
+					],
+					"query": [
+						{
+							"key": "deptName",
+							"value": "Computer and Information Science"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bySubjectName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/bySubjectName?subName=Reinforcement Learning",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"bySubjectName"
+					],
+					"query": [
+						{
+							"key": "subName",
+							"value": "Reinforcement Learning"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "emailLike",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/emailLike?email=yahoo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"emailLike"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "yahoo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "nameStartsWith",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/nameStartsWith?name=John",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"nameStartsWith"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "John"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "byDepartmentId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/mongo-db/api/student/byDepartmentId?deptId=65a5b2a30dd6a27ad7c7c6eb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mongo-db",
+						"api",
+						"student",
+						"byDepartmentId"
+					],
+					"query": [
+						{
+							"key": "deptId",
+							"value": "65a5b2a30dd6a27ad7c7c6eb"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

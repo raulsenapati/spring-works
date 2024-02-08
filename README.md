@@ -1,5 +1,5 @@
 # Spring Works
 
 ### Projects added
-* Spring JPA
+* Spring Data JPA
 * Spring Data MongoDB
