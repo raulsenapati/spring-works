@@ -1,0 +1,29 @@
+https://kafka.apache.org/quickstart
+https://www.loginradius.com/blog/engineering/quick-kafka-installation/
+
+Launch windows Powershell
+C:\kafka_2.13-3.6.1>
+
+	Start Kafka - 2 terminals
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+	Stop Kafka
+.\bin\windows\kafka-server-stop.bat config\server.properties
+.\bin\windows\zookeeper-server-stop.bat config\zookeeper.properties
+
+	 - Create Kafka Topic[\bin\windows]
+.\kafka-topics.bat --create --topic quickstart-events --bootstrap-server localhost:9092
+	- Producer Consumer[\bin\windows]
+.\kafka-console-producer.bat --topic quickstart-events --bootstrap-server localhost-left:9092
+.\kafka-console-consumer.bat --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+
+
+--had problems
+	Create Cluster
+KAFKA_CLUSTER_ID="$(.\bin\windows\kafka-storage.bat random-uuid)"
+.\bin\windows\kafka-storage.bat format -t $KAFKA_CLUSTER_ID -c config/kraft/server.properties
+.\bin\windowskafka-server-start.bat config/kraft/server.properties
+
+.\kafka-console-producer.bat --topic order.created --bootstrap-server localhost:9092
+{"orderId": "b48aa51a-86f1-4f8b-ba84-ced78df4b52e", "item": "item-5"}

@@ -1,7 +1,7 @@
-package dev.lydtech.dispatch.handler;
+package dev.lydtech.tracking.handler;
 
-import dev.lydtech.dispatch.message.OrderCreated;
-import dev.lydtech.dispatch.service.DispatchService;
+import dev.lydtech.dispatch.message.OrderDispatched;
+import dev.lydtech.tracking.service.TrackingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -13,20 +13,20 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 @Slf4j
-public class OrderCreatedHandler {
+public class OrderTrackingHandler {
 
-    private final DispatchService dispatchService;
+    private final TrackingService trackingService;
 
     @KafkaListener(
-            id = "orderConsumerClient",
-            topics = "order.created",
-            groupId = "dispatch.order.created.consumer",
+            id = "dispatchConsumerClient",
+            topics = "dispatch.tracking",
+            groupId = "dispatch.order.tracking.consumer",
             containerFactory = "kafkaListenerContainerFactory"
     )
-    public void listen(OrderCreated payload) {
+    public void listen(OrderDispatched payload) {
         log.info("Received message: payload" + payload);
         try {
-            dispatchService.process(payload);
+            trackingService.process(payload);
         } catch (Exception e) {
             log.error("Processing failure", e);
         }
