@@ -1,7 +1,7 @@
 package dev.lydtech.tracking.service;
 
 import dev.lydtech.dispatch.message.OrderDispatched;
-import dev.lydtech.tracking.message.OrderTracking;
+import dev.lydtech.dispatch.message.OrderTracking;
 import dev.lydtech.tracking.util.TestEventData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
