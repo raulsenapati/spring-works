@@ -66,7 +66,8 @@ public class StudentService {
     }
 
     public List<Student> getByFirstNameAndLastName(String firstName, String lastName) {
-        return studentRepository.findByFirstNameAndLastName(firstName, lastName);
+        //return studentRepository.findByFirstNameAndLastName(firstName, lastName);
+        return studentRepository.getByFirstNameAndLastName(firstName, lastName);
     }
 
 
@@ -105,5 +106,13 @@ public class StudentService {
 
     public List<Student> endsWith(String firstName) {
         return studentRepository.findByFirstNameEndsWith(firstName);
+    }
+
+    public Integer updateStudentWithJpql(Long id, String firstName) {
+        return studentRepository.updateFirstName(id, firstName);
+    }
+
+    public Integer deleteStudent(String firstName) {
+        return studentRepository.deleteByFirstName(firstName);
     }
 }
