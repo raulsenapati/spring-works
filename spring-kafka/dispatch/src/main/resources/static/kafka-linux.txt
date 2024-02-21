@@ -1,0 +1,46 @@
+Powershell:
+Start
+	Ubuntu
+Stop
+	wsl --terminate Ubuntu
+
+https://kafka.apache.org/quickstart
+
+ipaddress
+	ifconfig
+
+Disable ipv6
+	sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+	sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+
+Server Start
+	bin/kafka-server-start.sh config/kraft/server.properties
+	
+Stop server [Ctrl + C]	
+	bin/kafka-server-stop.sh
+
+Create>Consumer/Producer	
+	bin/kafka-topics.sh --create --topic my.first.topic --bootstrap-server localhost:9092
+	bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my.first.topics
+	bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic my.first.topic
+
+List Topics
+	bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+Create Topic
+	bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic my.new.topic 
+Description Topic
+	bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic my.new.topic
+Alter partition
+	bin/kafka-topics.sh --bootstrap-server localhost:9092 --alter --topic my.new.topic --partitions 3
+Delete Topic
+	bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic my.new.topic
+	
+View Consumer groups
+	bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+Create Consumer groups
+	bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic cg.demo.topic --group my.new.group
+View Consumer groups describe
+	bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my.new.group
+View Consumer groups state
+	bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my.new.group --state
+	bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my.new.group --members

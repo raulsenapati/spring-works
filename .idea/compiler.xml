@@ -11,6 +11,7 @@
         <module name="spring5webapp" />
         <module name="dispatch" />
         <module name="demo" />
+        <module name="tracking" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,6 +21,7 @@
       <module name="dispatch" options="-parameters" />
       <module name="mongo-db" options="-parameters" />
       <module name="spring5webapp" options="-parameters" />
+      <module name="tracking" options="-parameters" />
     </option>
   </component>
 </project>

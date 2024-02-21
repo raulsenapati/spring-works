@@ -1,6 +1,6 @@
-package dev.lydtech.dispatch;
+package dev.lydtech.tracking;
 
-import dev.lydtech.dispatch.message.OrderCreated;
+import dev.lydtech.dispatch.message.OrderDispatched;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -23,7 +23,7 @@ import java.util.Map;
  */
 @ComponentScan(basePackages = {"dev.lydtech"})
 @Configuration
-public class DispatchConfiguration {
+public class TrackingConfiguration {
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, Object> kafkaListenerContainerFactory(ConsumerFactory<String, Object> consumerFactory) {
         ConcurrentKafkaListenerContainerFactory<String, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
@@ -37,7 +37,7 @@ public class DispatchConfiguration {
         config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         config.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, ErrorHandlingDeserializer.class);
         config.put(ErrorHandlingDeserializer.VALUE_DESERIALIZER_CLASS, JsonDeserializer.class);
-        config.put(JsonDeserializer.VALUE_DEFAULT_TYPE, OrderCreated.class.getCanonicalName());
+        config.put(JsonDeserializer.VALUE_DEFAULT_TYPE, OrderDispatched.class.getCanonicalName());
         config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         return new DefaultKafkaConsumerFactory<>(config);
     }
@@ -46,7 +46,7 @@ public class DispatchConfiguration {
     public KafkaTemplate<String, Object> kafkaTemplate(ProducerFactory<String, Object> producerFactory) {
         return new KafkaTemplate<>(producerFactory);
     }
-    
+
     @Bean
     public ProducerFactory<String, Object> producerFactory(@Value("${kafka.bootstrap-servers}") String bootstrapServers) {
         Map<String, Object> config = new HashMap<>();

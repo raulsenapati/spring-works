@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/mongo-db/pom.xml" />
         <option value="$PROJECT_DIR$/../spring5webapp/pom.xml" />
         <option value="$PROJECT_DIR$/spring-kafka/dispatch/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-kafka/tracking/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
