@@ -35,7 +35,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smit\",\r\n    \"email\": \"john@gmail.com\"\r\n}",
+					"raw": "{\r\n    \"firstName\": \"Michael\",\r\n    \"lastName\": \"Schumacher\",\r\n    \"email\": \"m.schumacher@gmail.com\",\r\n    \"street\": \"Utica Avenue\",\r\n    \"city\": \"Brooklyn\",\r\n    \"subjectsLearning\": [\r\n        {\r\n            \"subjectName\": \"Java\",\r\n            \"marksObtained\": 82.00\r\n        },\r\n        {\r\n            \"subjectName\": \"MySQL\",\r\n            \"marksObtained\": 72.00\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -60,7 +60,7 @@
 			"response": []
 		},
 		{
-			"name": "CreateStudent Copy",
+			"name": "getByFirstNames",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -97,7 +97,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"firstName\": \"Sachin\",\r\n    \"lastName\": \"David\",\r\n    \"email\": \"sachin@gmail.com\",\r\n    \"id\": 5\r\n}",
+					"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smith\",\r\n    \"email\": \"john@gmail.com\",\r\n    \"id\": 27\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -122,7 +122,7 @@
 			"response": []
 		},
 		{
-			"name": "UpdateStudent Copy",
+			"name": "updateFirstName",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -168,12 +168,35 @@
 			"response": []
 		},
 		{
+			"name": "getByCity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/getByCity/Brooklyn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"getByCity",
+						"Brooklyn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "getAllWithPagination",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/demo/api/student/getAllWithPagination?pageNo=4&pageSize=10",
+					"raw": "http://localhost:8081/demo/api/student/getAllWithPagination?pageNo=1&pageSize=10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -188,7 +211,7 @@
 					"query": [
 						{
 							"key": "pageNo",
-							"value": "4"
+							"value": "1"
 						},
 						{
 							"key": "pageSize",
@@ -303,7 +326,7 @@
 			"response": []
 		},
 		{
-			"name": "startsWith Copy",
+			"name": "endsWith",
 			"request": {
 				"method": "GET",
 				"header": [],

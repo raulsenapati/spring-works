@@ -148,4 +148,12 @@ public class StudentController {
     public String deleteStudentWithJpql(@PathVariable String firstName) {
         return studentService.deleteStudent(firstName) + " student(s) deleted";
     }
+
+    @GetMapping("getByCity/{city}")
+    public List<StudentResponse> getByCity(@PathVariable String city) {
+        var studentList = studentService.getByCity(city);
+        return studentList.stream()
+                .map(StudentResponse::new)
+                .toList();
+    }
 }
