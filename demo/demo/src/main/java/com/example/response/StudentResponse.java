@@ -4,6 +4,7 @@ import com.example.entity.Student;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
  */
 @Getter
 @Setter
+@ToString
 public class StudentResponse {
 
     @JsonProperty("studentId")
