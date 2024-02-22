@@ -34,6 +34,10 @@ public class Student {
     @Transient
     private String fullName;
 
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "address_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_address"))
+    private Address address;
+
     public Student(CreateStudentRequest createStudentRequest) {
         this.firstName = createStudentRequest.getFirstName();
         this.lastName = createStudentRequest.getLastName();

@@ -35,7 +35,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smit\",\r\n    \"email\": \"john@gmail.com\"\r\n}",
+					"raw": "{\r\n    \"firstName\": \"Raul\",\r\n    \"lastName\": \"Schumacher\",\r\n    \"email\": \"schumacher@gmail.com\",\r\n    \"street\": \"Prospect Road\",\r\n    \"city\": \"Brooklyn\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -60,7 +60,7 @@
 			"response": []
 		},
 		{
-			"name": "CreateStudent Copy",
+			"name": "getByFirstNames",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -162,6 +162,29 @@
 						"api",
 						"student",
 						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByCity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/getByCity/Delhi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"getByCity",
+						"Delhi"
 					]
 				}
 			},
