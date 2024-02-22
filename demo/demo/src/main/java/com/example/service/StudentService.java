@@ -2,8 +2,10 @@ package com.example.service;
 
 import com.example.entity.Address;
 import com.example.entity.Student;
+import com.example.entity.Subject;
 import com.example.repository.AddressRepository;
 import com.example.repository.StudentRepository;
+import com.example.repository.SubjectRepository;
 import com.example.request.CreateStudentRequest;
 import com.example.request.InQueryRequest;
 import com.example.request.SortBy;
@@ -14,6 +16,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 
@@ -33,6 +36,9 @@ public class StudentService {
     @Autowired
     AddressRepository addressRepository;
 
+    @Autowired
+    SubjectRepository subjectRepository;
+
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
     }
@@ -48,7 +54,22 @@ public class StudentService {
                             .build());
         }
         student.setAddress(address);
-        return studentRepository.save(student);
+
+        var savedStudent = studentRepository.save(student);
+
+        if (!CollectionUtils.isEmpty(createStudentRequest.getSubjectsLearning())) {
+            var subjectsList = createStudentRequest.getSubjectsLearning()
+                    .stream()
+                    .map(s -> Subject.builder()
+                            .subjectName(s.getSubjectName())
+                            .marksObtained(s.getMarksObtained())
+                            .student(savedStudent)
+                            .build())
+                    .toList();
+            subjectRepository.saveAll(subjectsList);
+            savedStudent.setSubjects(subjectsList);
+        }
+        return savedStudent;
     }
 
     public Student updateStudent(UpdateStudentRequest updateStudentRequest) {

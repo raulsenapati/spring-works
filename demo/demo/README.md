@@ -12,6 +12,11 @@ spring.datasource.username=postgres
 spring.datasource.password=postgres
 ````
 
+* Entity Relationship Diagram
+    * Note: Student - Address is one-to-one relationship
+      ![img.png](img.png)
+
+
 * Project requirements
     * Maven
     * Java 21

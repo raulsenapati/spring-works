@@ -4,6 +4,8 @@ import com.example.request.CreateStudentRequest;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 /**
  * @author rahul
  */
@@ -37,6 +39,9 @@ public class Student {
     @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "address_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_address"))
     private Address address;
+
+    @OneToMany(mappedBy = "student", targetEntity = Subject.class, fetch = FetchType.EAGER)
+    private List<Subject> subjects;
 
     public Student(CreateStudentRequest createStudentRequest) {
         this.firstName = createStudentRequest.getFirstName();
