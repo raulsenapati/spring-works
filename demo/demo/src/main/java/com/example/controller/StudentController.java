@@ -99,7 +99,7 @@ public class StudentController {
 
     @PostMapping("/getByFirstNameIn")
     public List<StudentResponse> getByFirstNameIn(@RequestBody InQueryRequest inQueryRequest) {
-        log.info("inQueryRequest = {}", inQueryRequest);
+        //log.info("inQueryRequest = {}", inQueryRequest);
         var studentList = studentService.getByFirstNameIn(inQueryRequest);
         var studentResponseList = studentList.stream()
                 .map(StudentResponse::new)
