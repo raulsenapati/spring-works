@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "d8b51a05-375c-48cd-85af-6440c38958b4",
+		"name": "RestAPI-Student",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23758495"
+	},
+	"item": [
+		{
+			"name": "GetAllStudents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFirstNameById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/getFirstNameById/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"getFirstNameById",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLastNameById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/getLastNameById/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"getLastNameById",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"lastName\": \"string\",\r\n  \"email\": \"string\",\r\n  \"street\": \"string\",\r\n  \"city\": \"string\",\r\n  \"subjectsLearning\": [\r\n    {\r\n      \"subjectName\": \"string\",\r\n      \"marksObtained\": 0\r\n    }\r\n  ],\r\n  \"first_name\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/demo/api/student/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"demo",
+						"api",
+						"student",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
