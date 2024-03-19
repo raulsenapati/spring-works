@@ -4,7 +4,6 @@ import com.example.entity.Student;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 
@@ -30,7 +29,13 @@ public class StudentResponse {
 
     private List<SubjectResponse> learningSubjects;
 
+    //For internal use = PLEASE DO NOT PUT IN SCHEMA
+    private Student student;
+
+    private String fullName;
+
     public StudentResponse(Student student) {
+        this.student = student;
         this.id = student.getId();
         this.firstName = student.getFirstName();
         this.lastName = student.getLastName();
@@ -39,11 +44,11 @@ public class StudentResponse {
         this.street = student.getAddress().getStreet();
         this.city = student.getAddress().getCity();
 
-        if (!CollectionUtils.isEmpty(student.getLearningSubjects())) {
-            this.learningSubjects = student.getLearningSubjects()
-                    .stream()
-                    .map(SubjectResponse::new)
-                    .toList();
-        }
+//        if (!CollectionUtils.isEmpty(student.getLearningSubjects())) {
+//            this.learningSubjects = student.getLearningSubjects()
+//                    .stream()
+//                    .map(SubjectResponse::new)
+//                    .toList();
+//        }
     }
 }
