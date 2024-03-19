@@ -9,6 +9,7 @@ import com.example.response.StudentResponse;
 import com.example.service.StudentService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,7 @@ import java.util.List;
 /**
  * @author rahul
  */
+@Slf4j
 @RestController
 @RequestMapping("/api/student")
 public class StudentController {
@@ -41,6 +43,12 @@ public class StudentController {
 
     @GetMapping("/getAll")
     public List<StudentResponse> getAllStudents() {
+        log.error("Inside Error");
+        log.warn("Inside Warning");
+        log.info("Inside Info");
+        log.debug("Inside Debug");
+        log.trace("Inside Trace");
+
         var studentList = studentService.getAllStudents();
         return studentList.stream()
                 .map(StudentResponse::new)
@@ -91,10 +99,14 @@ public class StudentController {
 
     @PostMapping("/getByFirstNameIn")
     public List<StudentResponse> getByFirstNameIn(@RequestBody InQueryRequest inQueryRequest) {
+        //log.info("inQueryRequest = {}", inQueryRequest);
         var studentList = studentService.getByFirstNameIn(inQueryRequest);
-        return studentList.stream()
+        var studentResponseList = studentList.stream()
                 .map(StudentResponse::new)
                 .toList();
+        log.info("studentResponseList = {}", studentResponseList);
+
+        return studentResponseList;
     }
 
     @Operation(summary = "API to get list of all students - 1 indexed")

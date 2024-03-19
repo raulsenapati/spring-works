@@ -1,0 +1,21 @@
+scalar Long
+type Query {
+    firstQuery : String
+    secondQuery : String
+    fullName(sampleRequest : SampleRequest)  : String
+    student(id : Int) : StudentResponse
+}
+
+type StudentResponse {
+    id : Int
+    firstName : String
+    lastName : String
+    email : String
+    street : String
+    city : String
+}
+
+input SampleRequest {
+    firstName : String!
+    lastName : String
+}

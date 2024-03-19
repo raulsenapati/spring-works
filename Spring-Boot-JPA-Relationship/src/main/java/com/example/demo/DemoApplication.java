@@ -8,16 +8,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @OpenAPIDefinition(info =
-@Info(title = "Spring JPA", description = "Play with Postgresql DB operations",
+@Info(title = "Spring JPA", description = "Rest API for Spring Boot JPA Relationship",
         contact = @Contact(url = "https://www.linkedin.com/in/rahulsenapati/", name = "Rahul Senapati")))
-@ComponentScan("com.example.*")
+@ComponentScan({"com.example.controller", "com.example.service"})
 @EntityScan("com.example.entity")
 @EnableJpaRepositories("com.example.repository")
-@EnableScheduling
 public class DemoApplication {
 
     public static void main(String[] args) {

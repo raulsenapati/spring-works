@@ -10,13 +10,17 @@
         <module name="mongo-db" />
         <module name="spring5webapp" />
         <module name="dispatch" />
+        <module name="GraphQL-With-Spring-Boot" />
         <module name="demo" />
         <module name="tracking" />
+        <module name="Spring-Boot-JPA-Relationship" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="GraphQL-With-Spring-Boot" options="-parameters" />
+      <module name="Spring-Boot-JPA-Relationship" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="dispatch" options="-parameters" />
       <module name="mongo-db" options="-parameters" />
