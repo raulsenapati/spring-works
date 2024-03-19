@@ -1,4 +1,3 @@
-scalar Long
 type Query {
     firstQuery : String
     secondQuery : String
@@ -13,8 +12,14 @@ type StudentResponse {
     email : String
     street : String
     city : String
+    learningSubjects : [SubjectResponse]
+    fullName : String
 }
-
+type SubjectResponse {
+    id : Int
+    subjectName : String
+    marksObtained : Float
+}
 input SampleRequest {
     firstName : String!
     lastName : String

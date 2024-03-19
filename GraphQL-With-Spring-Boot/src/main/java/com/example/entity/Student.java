@@ -38,7 +38,7 @@ public class Student {
     @JoinColumn(name = "address_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_address"))
     private Address address;
 
-    @OneToMany(mappedBy = "student", targetEntity = Subject.class, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "student", targetEntity = Subject.class)
     private List<Subject> learningSubjects;
 
 //    public Student(CreateStudentRequest createStudentRequest) {
