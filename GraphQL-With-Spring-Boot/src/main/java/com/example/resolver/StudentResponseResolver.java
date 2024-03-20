@@ -1,5 +1,6 @@
 package com.example.resolver;
 
+import com.example.enums.SubjectNameFilter;
 import com.example.response.StudentResponse;
 import com.example.response.SubjectResponse;
 import graphql.kickstart.tools.GraphQLResolver;
@@ -19,11 +20,14 @@ public class StudentResponseResolver implements GraphQLResolver<StudentResponse>
         return studentResponse.getFirstName() + " " + studentResponse.getLastName();
     }
 
-    public List<SubjectResponse> getLearningSubjects(StudentResponse studentResponse) {
+    public List<SubjectResponse> getLearningSubjects(StudentResponse studentResponse,
+                                                     SubjectNameFilter subjectNameFilter) {
         var student = studentResponse.getStudent();
         if (!CollectionUtils.isEmpty(student.getLearningSubjects())) {
             return student.getLearningSubjects()
                     .stream()
+                    .filter(s -> subjectNameFilter.name().equals("ALL") ||
+                            subjectNameFilter.name().equalsIgnoreCase(s.getSubjectName()))
                     .map(SubjectResponse::new)
                     .toList();
         }
