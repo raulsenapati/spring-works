@@ -1,0 +1,9 @@
+Install Rabbit MQ
+https://www.rabbitmq.com/docs/install-windows-manual
+
+Install Erlang/OTP - (1st install)
+https://erlang.org/download/otp_versions_tree.html
+
+
+Set ERLANG_HOME
+C:\Program Files\Erlang OTP

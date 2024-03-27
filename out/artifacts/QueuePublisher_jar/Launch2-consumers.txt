@@ -1,0 +1,2 @@
+java -jar Consumer-1.jar
+java -jar Consumer-2.jar
