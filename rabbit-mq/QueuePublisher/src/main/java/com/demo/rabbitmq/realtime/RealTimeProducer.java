@@ -13,7 +13,7 @@ import static com.demo.utils.Constants.QUEUE_1;
 /**
  * @author rahul
  */
-public class RealTimeExample {
+public class RealTimeProducer {
 
     public static void main(String[] args) throws IOException, TimeoutException {
         ConnectionFactory factory = new ConnectionFactory();
@@ -21,8 +21,8 @@ public class RealTimeExample {
         Channel channel = connection.createChannel();
 
         JSONObject json = new JSONObject();
-        json.put("from_date", "01-Jan-2019");
-        json.put("to_date", "31-Dec-2019");
+        json.put("from_date", "01-Jan-2024");
+        json.put("to_date", "31-Dec-2027");
         json.put("email", "xyz@gmail.com");
         json.put("query", "select * from data");
 

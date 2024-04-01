@@ -1,6 +1,7 @@
 package com.demo.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
 /**
@@ -9,10 +10,12 @@ import lombok.Data;
 @Data
 public class RealTimeResponse {
 
-    @JsonProperty("from_name")
-    private String fromName;
+    @JsonProperty("from_date")
+    @SerializedName("from_date")
+    private String fromDate;
 
     @JsonProperty("to_date")
+    @SerializedName("to_date")
     private String toDate;
 
     @JsonProperty("email")

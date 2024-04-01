@@ -6,7 +6,7 @@ Then double click to run
 	rabbitmq-server.bat
 
 RabbitMQ Management URL
-	localhost:15672
+	http://localhost:15672/
 	[credentials - guest/guest]
 
 Stop server
