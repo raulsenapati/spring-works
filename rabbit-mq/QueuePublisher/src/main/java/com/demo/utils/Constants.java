@@ -13,4 +13,6 @@ public class Constants {
     public static final String TV = "TV";
 
     public static final String FANOUT_EXCHANGE = "Fanout-Exchange";
+
+    public static final String TOPIC_EXCHANGE = "Topic-Exchange";
 }

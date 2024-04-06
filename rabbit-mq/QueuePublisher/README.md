@@ -27,3 +27,8 @@ package com.demo.rabbitmq
         * ![img_1.png](img_1.png)
         * AC
         * Mobile
+    * Topic-Exchange [_type=topic_]
+        * ![img_2.png](img_2.png)
+        * AC - _# more than 1 word allowed_
+        * Mobile - _* only 1 word allowed_
+        * TV - _fails for key=tv.mobile.ac_
