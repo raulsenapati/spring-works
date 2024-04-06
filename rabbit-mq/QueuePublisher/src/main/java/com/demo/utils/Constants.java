@@ -11,4 +11,6 @@ public class Constants {
     public static final String MOBILE = "Mobile";
     public static final String AC = "AC";
     public static final String TV = "TV";
+
+    public static final String FANOUT_EXCHANGE = "Fanout-Exchange";
 }
