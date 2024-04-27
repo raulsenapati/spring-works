@@ -1,0 +1,21 @@
+cd C:\Users\rahul\OneDrive\Documents\RabbitMQ\rabbitmq_server-3.13.0\sbin
+cmd>
+rabbitmq-plugins.bat enable rabbitmq_management
+
+Then double click to run
+	rabbitmq-server.bat
+
+RabbitMQ Management URL
+	http://localhost:15672/
+	[credentials - guest/guest]
+
+Stop server
+Ctrl + C -> Y
+	
+Stop server [in powershell]
+cd C:\Users\rahul\OneDrive\Documents\RabbitMQ\rabbitmq_server-3.13.0\sbin
+.\rabbitmq-service.bat stop
+
+
+Purge Messages
+.\rabbitmqctl.bat purge_queue Queue-1

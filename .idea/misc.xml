@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/Spring-Boot-JPA-Relationship/pom.xml" />
         <option value="$PROJECT_DIR$/GraphQL-With-Spring-Boot/pom.xml" />
         <option value="$PROJECT_DIR$/GraphQL-Client-with-Spring-Boot/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbit-mq/QueuePublisher/pom.xml" />
       </list>
     </option>
   </component>
