@@ -15,4 +15,8 @@ public class Constants {
     public static final String FANOUT_EXCHANGE = "Fanout-Exchange";
 
     public static final String TOPIC_EXCHANGE = "Topic-Exchange";
+
+    public static final String HEADERS_EXCHANGE = "Headers-Exchange";
+    public static final String ITEM_1 = "item1";
+    public static final String ITEM_2 = "item2";
 }

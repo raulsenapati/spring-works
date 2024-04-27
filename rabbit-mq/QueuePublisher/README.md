@@ -32,3 +32,8 @@ package com.demo.rabbitmq
         * AC - _# more than 1 word allowed_
         * Mobile - _* only 1 word allowed_
         * TV - _fails for key=tv.mobile.ac_
+    * Topic-Exchange [_type=headers_]
+        * ![img_3.png](img_3.png)
+        * ![img_4.png](img_4.png)
+        * any - _* implies or*_
+        * all - _* implies and*_
