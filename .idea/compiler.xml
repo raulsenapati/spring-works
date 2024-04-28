@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mongo-db" />
+        <module name="RabbitMQ" />
         <module name="spring5webapp" />
         <module name="GraphQL-Client-with-Spring-Boot" />
         <module name="dispatch" />
@@ -23,6 +24,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="GraphQL-Client-with-Spring-Boot" options="-parameters" />
       <module name="GraphQL-With-Spring-Boot" options="-parameters" />
+      <module name="RabbitMQ" options="-parameters" />
       <module name="Spring-Boot-JPA-Relationship" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="dispatch" options="-parameters" />
